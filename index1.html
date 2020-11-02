@@ -17,11 +17,9 @@
         
          
          $(function(){
-            //     console.log($('.dome').eq(2).css("color","red"))
-            //     $('.dome').eq(2).css({"color":"#f40"})
                 console.log($('.dome').first().css("color","red").end().css({"background":"#ccc"}))
             
-            
+            //get请求
             $.ajax({
                  url:'http://localhost:5001/api',
                  type:'GET',
@@ -34,6 +32,7 @@
                        console.log(e);
                  }  
             })
+            //post请求
             $.ajax({
                  url:'http://localhost:5001/post',
                  type:'post',
