@@ -239,7 +239,7 @@
                         num+=1*dot; 
                         num = num>$('.imgs').length()-1?0:num;
                         num = num<0?$('.imgs').length()-1:num;
-                        console.log(num)
+                       
                         $('.imgs').eq(num).css("display","block").siblings('.imgs').css("display","none")
 
                 } 
