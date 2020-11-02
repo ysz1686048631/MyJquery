@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <script src="./JQE.js"></script>
+</head>
+<body>
+      <div class="dome">asasd</div>
+      <div class="dome">asasd</div>
+      <div class="dome">asasd</div>
+      <p class="ss">Hello</p>
+      <button class="btn">点击</button>
+</body>
+<script>
+        
+         
+         $(function(){
+            //     console.log($('.dome').eq(2).css("color","red"))
+            //     $('.dome').eq(2).css({"color":"#f40"})
+                console.log($('.dome').first().css("color","red").end().css({"background":"#ccc"}))
+            
+            
+            $.ajax({
+                 url:'http://localhost:5001/api',
+                 type:'GET',
+                 data:{name:'aaa'},
+                 async:true,
+                 success:function(e){
+                        console.log(e);
+                 },
+                 error:function(e){
+                       console.log(e);
+                 }  
+            })
+            $.ajax({
+                 url:'http://localhost:5001/post',
+                 type:'post',
+                 data:{name:'aaa'},
+                 async:true,
+                 success:function(e){
+                        console.log(e);
+                 },
+                 error:function(e){
+                       console.log(e);
+                 }  
+            })
+         }) 
+</script>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./JQE.js"></script>
+</head>
+<style>
+       .dome{
+             width:300px;
+             height: 200px;
+             display: flex;
+             flex-direction: row;
+             
+             background: red;
+
+       }
+       .dome .swiper{
+              flex: 1;
+              position: relative;
+       } 
+       .dome .swiper .imgs{
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+       }
+       .btn{
+           cursor: pointer;
+       }
+</style>
+<body>
+    <div class="dome">
+           <div class=" btn pre">《</div>
+           <div class="swiper">
+                <img class="imgs" src="https://dss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3443714613,873961460&fm=26&gp=0.jpg" alt="">
+                <img class="imgs" src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1705581946,4177791147&fm=26&gp=0.jpg" alt="">
+                <img class="imgs" src="https://dss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3884696342,748367806&fm=26&gp=0.jpg" alt=""> 
+           </div>
+           <div class=" btn next">》</div>
+    </div>
+   
+</body>
+<script>
+    
+         
+       $(function(){
+             var num = 0;
+             $('.pre').on('click',function(){
+                move(-1)
+             })
+             $('.next').on('click',function(){
+                move(1)
+             })
+             $('.imgs').eq(0).css("display","block");
+             function move(dot){
+                    num+=1*dot; 
+                    num = num>$('.imgs').length()-1?0:num;
+                    num = num<0?$('.imgs').length()-1:num;
+                    console.log(num)
+                    $('.imgs').eq(num).css("display","block").siblings('.imgs').css("display","none")
+
+             } 
+            
+       })
+</script>
+</html>
